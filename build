@@ -1,0 +1,20 @@
+pipeline {
+	agent none
+	
+	parameters {
+	    choice(choices: 'a\nb\nc\nd', description: 'Allowing names', name: 'var')
+		}
+
+   stages {
+      stage("downloading code") {
+	      agent { node { label 'node03' } } 
+
+		  steps {
+			build 'raj_jobs'	
+				}
+			 }
+  
+
+
+		}
+	}
