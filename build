@@ -10,7 +10,9 @@ pipeline {
 	      agent { node { label 'kubmaster' } } 
 
 		  steps {
-		       sh ''' echo "byeee ${var}" '''
+		       sh ''' echo "byeee ${var}"
+			    echo hiii > /tmp/samhome
+				'''
 
 				}
 			 }
